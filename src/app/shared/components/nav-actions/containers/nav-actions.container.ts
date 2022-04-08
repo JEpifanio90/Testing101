@@ -32,4 +32,15 @@ export class NavActionsContainer {
   dispatchThemeAction($theme: ETheme): void {
     this.store.dispatch(CoreActions.changeTheme({ theme: $theme }));
   }
+
+  /**
+   * Dispatch Update Query
+   *
+   * @summary Dispatch an update query action
+   * @param $query: string
+   * @returns void
+   */
+  dispatchUpdateQuery($query: string): void {
+    this.store.dispatch(CoreActions.updateQuery({ query: $query }))
+  }
 }

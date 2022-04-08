@@ -7,10 +7,12 @@ export const featureKey = "core";
 
 export interface State {
   theme: ETheme;
+  query: string;
 }
 
 export const initialState: State = {
-  theme: ETheme.dark
+  theme: ETheme.dark,
+  query: "characters"
 };
 
 export const reducer = createReducer(
@@ -18,5 +20,9 @@ export const reducer = createReducer(
   on(CoreActions.changeTheme, (state, action) => ({
     ...state,
     theme: action.theme
+  })),
+  on(CoreActions.updateQuery, (state, action) => ({
+    ...state,
+    query: action.query
   }))
 );

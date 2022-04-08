@@ -11,6 +11,8 @@ import { ETheme } from "@project/shared/enums/theme.enum";
 export class NavActionsView {
   @Input() theme!: ETheme;
   @Output() changeTheme: EventEmitter<ETheme> = new EventEmitter<ETheme>();
+  @Output() updateQuery: EventEmitter<string> = new EventEmitter<string>();
+  query = "characters";
 
   constructor() {
   }
@@ -23,5 +25,9 @@ export class NavActionsView {
    */
   emitChangeTheme(): void {
     this.changeTheme.emit((this.theme === ETheme.dark) ? ETheme.light : ETheme.dark);
+  }
+
+  emitSearch(): void {
+    this.updateQuery.emit(this.query);
   }
 }

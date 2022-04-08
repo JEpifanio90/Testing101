@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { NbButtonModule, NbIconModule } from "@nebular/theme";
+import { NbButtonModule, NbIconModule, NbSelectModule } from "@nebular/theme";
 
 import { NavActionsContainer } from "@project/shared/components/nav-actions/containers/nav-actions.container";
 import { NavActionsView } from "@project/shared/components/nav-actions/views/nav-actions.view";
@@ -13,7 +13,8 @@ import { NavActionsView } from "@project/shared/components/nav-actions/views/nav
   imports: [
     CommonModule,
     NbButtonModule,
-    NbIconModule
+    NbIconModule,
+    NbSelectModule
   ],
   exports: [NavActionsContainer]
 })
