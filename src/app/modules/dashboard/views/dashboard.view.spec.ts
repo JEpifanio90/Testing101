@@ -8,9 +8,9 @@ describe("DashboardView", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardView ]
+      declarations: [DashboardView]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

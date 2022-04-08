@@ -1,0 +1,3 @@
+<ng-container *ngIf="(store$ | async) as store">
+  <ng-nav-actions-view [theme]="store.theme" (changeTheme)="dispatchThemeAction($event)"></ng-nav-actions-view>
+</ng-container>

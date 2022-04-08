@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DashboardContainer } from "./dashboard.container";
+import { NavActionsContainer } from "./nav-actions.container";
 
-describe("DashboardContainer", () => {
-  let component: DashboardContainer;
-  let fixture: ComponentFixture<DashboardContainer>;
+describe("Nav Actions Container", () => {
+  let component: NavActionsContainer;
+  let fixture: ComponentFixture<NavActionsContainer>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DashboardContainer]
+      declarations: [NavActionsContainer]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardContainer);
+    fixture = TestBed.createComponent(NavActionsContainer);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -14,5 +14,6 @@ export class CoreEffects {
     })
   ), { dispatch: false });
 
-  constructor(private actions$: Actions, private themeService: NbThemeService) { }
+  constructor(private actions$: Actions, private themeService: NbThemeService) {
+  }
 }

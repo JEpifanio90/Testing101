@@ -6,11 +6,11 @@ import { ETheme } from "@project/shared/enums/theme.enum";
 import { CoreActions, CoreSelectors, fromCore } from "@project/store/core.index";
 
 @Component({
-  selector: "ng-main",
-  templateUrl: "./main.layout.html",
-  styleUrls: ["./main.layout.scss"]
+  selector: "ng-nav-actions",
+  templateUrl: "./nav-actions.container.html",
+  styleUrls: ["./nav-actions.container.scss"]
 })
-export class MainLayout {
+export class NavActionsContainer {
   store$: Observable<fromCore.State>;
   private theme!: ETheme;
 
@@ -22,7 +22,14 @@ export class MainLayout {
     }));
   }
 
-  dispatchThemeAction(): void {
-    this.store.dispatch(CoreActions.changeTheme({ theme: (this.theme === ETheme.dark) ? ETheme.light : ETheme.dark }));
+  /**
+   * Dispatch Theme Action
+   *
+   * @summary Dispatch a change theme action
+   * @param $theme: ETheme
+   * @returns void
+   */
+  dispatchThemeAction($theme: ETheme): void {
+    this.store.dispatch(CoreActions.changeTheme({ theme: $theme }));
   }
 }
