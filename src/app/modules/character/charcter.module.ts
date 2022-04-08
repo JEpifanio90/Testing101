@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { CharcterRoutingModule } from './charcter-routing.module';
+import { CharcterRoutingModule } from "./charcter-routing.module";
 
 
 @NgModule({
@@ -11,4 +11,5 @@ import { CharcterRoutingModule } from './charcter-routing.module';
     CharcterRoutingModule
   ]
 })
-export class CharcterModule { }
+export class CharcterModule {
+}
