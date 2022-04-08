@@ -18,6 +18,12 @@
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
+      "plugins": [
+        "eslint-plugin-unicorn",
+        "eslint-plugin-no-null",
+        "unused-imports",
+        "import"
+      ],
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
@@ -34,7 +40,136 @@
             "prefix": "ng",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@angular-eslint/component-class-suffix": [
+          "error",
+          {
+            "suffixes": [
+              "Component",
+              "Widget",
+              "Container",
+              "Dialog",
+              "Actions",
+              "Form",
+              "View",
+              "Layout"
+            ]
+          }
+        ],
+        "@typescript-eslint/array-type": [
+          "error",
+          {
+            "default": "generic"
+          }
+        ],
+        "@typescript-eslint/ban-ts-comment": "error",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "no-public"
+          }
+        ],
+        "@typescript-eslint/no-for-in-array": "error",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-this-alias": "error",
+        "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+        "@typescript-eslint/no-var-requires": "error",
+        "@typescript-eslint/no-unused-expressions": [
+          "error",
+          {
+            "allowTernary": true
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": [
+              "variable",
+              "function",
+              "parameter",
+              "classProperty",
+              "typeProperty",
+              "parameterProperty",
+              "classMethod",
+              "typeMethod",
+              "accessor"
+            ],
+            "format": [
+              "camelCase"
+            ],
+            "filter": {
+              "regex": "^(Accept|Authorization|Content-Type|access_token|refresh_token|expires_in|token_type|SL|IP|IM|RATE_INQUIRY|ECRPatterns|APPLICATION_ROUTES|HLJSState|QuickSearchReducer|WatchlistReducer|ROOT_REDUCERS|SummaryView|MockDate)$",
+              "match": false
+            }
+          }
+        ],
+        "id-blacklist": [
+          0
+        ],
+        "arrow-body-style": [
+          "error",
+          "as-needed"
+        ],
+        "arrow-parens": [
+          "off",
+          "always"
+        ],
+        "comma-dangle": "error",
+        "unused-imports/no-unused-imports": "error",
+        "import/order": [
+          "error",
+          {
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            },
+            "groups": [
+              "builtin",
+              "external",
+              [
+                "internal",
+                "parent",
+                "sibling",
+                "index"
+              ]
+            ],
+            "newlines-between": "always",
+            "pathGroups": [
+              {
+                "pattern": "@jester/**",
+                "group": "internal",
+                "position": "after"
+              },
+              {
+                "pattern": "src/**",
+                "group": "internal",
+                "position": "after"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": []
+          }
+        ],
+        "max-len": [
+          "error",
+          {
+            "code": 180
+          }
+        ],
+        "no-duplicate-case": "error",
+        "no-invalid-this": [
+          0
+        ],
+        "no-irregular-whitespace": "error",
+        "no-multiple-empty-lines": "error",
+        "no-null/no-null": "error",
+        "no-redeclare": "error",
+        "no-restricted-syntax": [
+          "error",
+          "ForInStatement"
+        ],
+        "no-template-curly-in-string": "error",
+        "prefer-template": "error",
+        "unicorn/filename-case": "error"
       }
     },
     {
