@@ -1,15 +1,15 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-import { CharcterRoutingModule } from "./charcter-routing.module";
+import { CharacterRoutingModule } from "./character-routing.module";
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    CharcterRoutingModule
+    CharacterRoutingModule
   ]
 })
-export class CharcterModule {
+export class CharacterModule {
 }
