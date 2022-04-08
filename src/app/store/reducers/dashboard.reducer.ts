@@ -2,7 +2,7 @@ import { createReducer, on } from "@ngrx/store";
 
 import * as DashboardActions from "@project/store/actions/dashboard.actions";
 
-export const featureKey = "user";
+export const featureKey = "dashboard";
 
 export interface State {
   flag: boolean;

@@ -1,4 +1,3 @@
-import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -14,10 +13,9 @@ import * as fromRoot from "@project/store/index";
   declarations: [],
   imports: [
     BrowserModule,
-    CommonModule,
     HttpClientModule,
     StoreRouterConnectingModule.forRoot(),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production, name: "JesterIO Global State" }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production, name: "Testing 101 State" }),
     StoreModule.forRoot(
       fromRoot.reducers,
       {
