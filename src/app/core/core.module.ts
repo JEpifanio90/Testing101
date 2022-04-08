@@ -1,6 +1,9 @@
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NbEvaIconsModule } from "@nebular/eva-icons";
+import { NbThemeModule } from "@nebular/theme";
 import { EffectsModule } from "@ngrx/effects";
 import { StoreRouterConnectingModule } from "@ngrx/router-store";
 import { StoreModule } from "@ngrx/store";
@@ -13,7 +16,10 @@ import * as fromRoot from "@project/store/index";
   declarations: [],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
+    NbThemeModule.forRoot({ name: "dark" }),
+    NbEvaIconsModule,
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production, name: "Testing 101 State" }),
     StoreModule.forRoot(
