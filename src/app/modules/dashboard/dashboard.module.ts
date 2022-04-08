@@ -1,13 +1,13 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { EffectsModule } from "@ngrx/effects";
+import { StoreModule } from "@ngrx/store";
 
+import { DashboardService } from "@project/core/http/dashboard.service";
 import { DashboardContainer } from "@project/modules/dashboard/containers/dashboard.container";
 import { DashboardRoutingModule } from "@project/modules/dashboard/dashboard-routing.module";
-import { DashboardView } from "@project/modules/dashboard/views/dashboard.view";
-import { DashboardService } from "@project/core/http/dashboard.service";
-import { StoreModule } from "@ngrx/store";
 import { DashboardEffects, fromDashboard } from "@project/modules/dashboard/store";
-import { EffectsModule } from "@ngrx/effects";
+import { DashboardView } from "@project/modules/dashboard/views/dashboard.view";
 
 
 @NgModule({

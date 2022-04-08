@@ -1,5 +1,6 @@
 <div class="d-flex justify-content-between">
-  <nb-select class="mx-2" placeholder="Search for..."  shape="semi-round" [(selected)]="query" (selectedChange)="emitSearch()">
+  <nb-select class="mx-2" placeholder="Search for..." shape="semi-round" [(selected)]="query"
+             (selectedChange)="emitSearch()">
     <nb-option value="characters">Characters</nb-option>
     <nb-option value="comics">Comics</nb-option>
   </nb-select>
