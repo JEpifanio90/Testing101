@@ -98,7 +98,7 @@
               "camelCase"
             ],
             "filter": {
-              "regex": "^(Accept|Authorization|Content-Type|access_token|refresh_token|expires_in|token_type|SL|IP|IM|RATE_INQUIRY|ECRPatterns|APPLICATION_ROUTES|HLJSState|QuickSearchReducer|WatchlistReducer|ROOT_REDUCERS|SummaryView|MockDate)$",
+              "regex": "^(Accept|Authorization|Content-Type|access_token|refresh_token|expires_in|token_type)$",
               "match": false
             }
           }
@@ -136,7 +136,7 @@
             "newlines-between": "always",
             "pathGroups": [
               {
-                "pattern": "@jester/**",
+                "pattern": "@project/**",
                 "group": "internal",
                 "position": "after"
               },
@@ -169,7 +169,11 @@
         ],
         "no-template-curly-in-string": "error",
         "prefer-template": "error",
-        "unicorn/filename-case": "error"
+        "unicorn/filename-case": "error",
+        "quotes": [
+          "error",
+          "double"
+        ]
       }
     },
     {
