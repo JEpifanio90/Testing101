@@ -5,17 +5,52 @@ import * as DashboardActions from "@project/store/actions/dashboard.actions";
 export const featureKey = "dashboard";
 
 export interface State {
-  flag: boolean;
+  loading: boolean;
+  characters: Array<string>;
+  comics: Array<string>;
+  error?: string;
 }
 
 export const initialState: State = {
-  flag: false
+  loading: false,
+  characters: [],
+  comics: []
 };
 
 export const reducer = createReducer(
   initialState,
-  on(DashboardActions.changeTheme, state => ({
+  on(DashboardActions.fetchCharacters, state => ({
     ...state,
-    flag: true
+    loading: true,
+    characters: [],
+    comics: [],
+    error: undefined
+  })),
+  on(DashboardActions.fetchCharactersSuccess, (state, action) => ({
+    ...state,
+    loading: false,
+    characters: action.characters
+  })),
+  on(DashboardActions.fetchCharactersFailure, (state, action) => ({
+    ...state,
+    loading: false,
+    error: action.error
+  })),
+  on(DashboardActions.fetchComics, state => ({
+    ...state,
+    loading: true,
+    comics: [],
+    characters: [],
+    error: undefined
+  })),
+  on(DashboardActions.fetchComicsSuccess, (state, action) => ({
+    ...state,
+    loading: false,
+    comics: action.comics
+  })),
+  on(DashboardActions.fetchComicsFailure, (state, action) => ({
+    ...state,
+    loading: false,
+    error: action.error
   }))
 );

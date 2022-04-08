@@ -1,9 +1,9 @@
 import * as fromRouter from "@ngrx/router-store";
-import { ActionReducerMap, MetaReducer } from "@ngrx/store";
+import { ActionReducerMap, createSelector, MetaReducer } from "@ngrx/store";
 
 import { environment } from "@project/env/environment";
-import { CoreEffects, fromCore } from "@project/store/core.index";
-import { DashboardEffects, fromDashboard } from "@project/store/dashboard.index";
+import { CoreEffects, CoreSelectors, fromCore } from "@project/store/core.index";
+import { DashboardEffects, DashboardSelectors, fromDashboard } from "@project/store/dashboard.index";
 
 
 export interface State {
@@ -19,5 +19,14 @@ export const reducers: ActionReducerMap<State> = {
 };
 
 export const metaReducers: Array<MetaReducer<State>> = !environment.production ? [] : [];
+
+export const selectDashboardWithQuery = createSelector(
+  DashboardSelectors.selectDashboardState,
+  CoreSelectors.selectCoreState,
+  (dashState: fromDashboard.State, coreState: fromCore.State) => ({
+    state: dashState,
+    query: coreState.query
+  })
+);
 
 export const effects = [DashboardEffects, CoreEffects];

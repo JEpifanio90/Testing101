@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
-  selector: "ng-dashboard",
+  selector: "ng-dashboard-view",
   templateUrl: "./dashboard.view.html",
   styleUrls: ["./dashboard.view.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
