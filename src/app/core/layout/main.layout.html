@@ -1,6 +1,10 @@
 <nb-layout>
   <nb-layout-header fixed>
-    hola
+    <ng-container *ngIf="(store$ | async) as store">
+      <button nbButton ghost status="primary" (click)="dispatchThemeAction()" aria-label="change theme">
+        <nb-icon [icon]="(store.theme === 'dark') ? 'moon' : 'sun'"></nb-icon>
+      </button>
+    </ng-container>
   </nb-layout-header>
   <nb-layout-column>
     <router-outlet></router-outlet>

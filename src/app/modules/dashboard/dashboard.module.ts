@@ -1,8 +1,8 @@
-import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
 
-import { DashboardRoutingModule } from "@project/modules/dashboard/dashboard-routing.module";
 import { DashboardContainer } from "@project/modules/dashboard/containers/dashboard.container";
+import { DashboardRoutingModule } from "@project/modules/dashboard/dashboard-routing.module";
 import { DashboardView } from "@project/modules/dashboard/views/dashboard.view";
 
 

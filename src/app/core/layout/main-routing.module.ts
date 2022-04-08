@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+
 import { MainLayout } from "@project/core/layout/main.layout";
 import { projectRoutes } from "@project/core/routes/application.routes";
 

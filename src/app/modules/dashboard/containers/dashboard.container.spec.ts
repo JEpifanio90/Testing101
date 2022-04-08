@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DashboardContainer } from './dashboard.container';
+import { DashboardContainer } from "./dashboard.container";
 
-describe('DashboardContainer', () => {
+describe("DashboardContainer", () => {
   let component: DashboardContainer;
   let fixture: ComponentFixture<DashboardContainer>;
 
@@ -19,7 +19,7 @@ describe('DashboardContainer', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

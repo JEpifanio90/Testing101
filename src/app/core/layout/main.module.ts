@@ -1,9 +1,9 @@
-import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { NbButtonModule, NbIconModule, NbLayoutModule, NbMenuModule } from "@nebular/theme";
 
 import { MainRoutingModule } from "@project/core/layout/main-routing.module";
 import { MainLayout } from "@project/core/layout/main.layout";
-import { NbLayoutModule, NbMenuModule } from "@nebular/theme";
 
 @NgModule({
   declarations: [
@@ -12,6 +12,8 @@ import { NbLayoutModule, NbMenuModule } from "@nebular/theme";
   imports: [
     CommonModule,
     MainRoutingModule,
+    NbButtonModule,
+    NbIconModule,
     NbMenuModule,
     NbLayoutModule
   ]

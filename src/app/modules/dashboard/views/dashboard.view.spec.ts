@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DashboardView } from './dashboard.view';
+import { DashboardView } from "./dashboard.view";
 
-describe('DashboardView', () => {
+describe("DashboardView", () => {
   let component: DashboardView;
   let fixture: ComponentFixture<DashboardView>;
 
@@ -19,7 +19,7 @@ describe('DashboardView', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
