@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { Observable, tap } from "rxjs";
-import { fromDashboard } from "@project/store/dashboard.index";
+import { fromDashboard } from "@project/modules/dashboard/store";
 import { Store } from "@ngrx/store";
-import { selectDashboardWithQuery } from "@project/store";
+import { selectDashboardWithQuery } from "@project/modules/dashboard/store/selectors/dashboard.selectors";
 
 @Component({
   selector: "ng-dashboard",

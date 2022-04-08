@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 
-import * as DashboardActions from "@project/store/actions/dashboard.actions";
+import * as DashboardActions from "@project/modules/dashboard/store/actions/dashboard.actions";
 
 export const featureKey = "dashboard";
 
