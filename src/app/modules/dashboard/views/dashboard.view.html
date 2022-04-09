@@ -3,12 +3,14 @@
 </ng-container>
 <ng-template #view>
   <div class="row">
-    <header class="col-12 my-3" style="text-align: end">
-      <nb-button-group [disabled]="loading">
-        <button nbButtonToggle value="One">One</button>
-        <button nbButtonToggle value="Two">Two</button>
-        <button nbButtonToggle value="Three">Three</button>
-      </nb-button-group>
+    <header class="col-12 my-3 d-flex justify-content-end" style="text-align: end">
+      <button nbButton class="mx-2" outline status="primary" size="large" [disabled]="currentPage <= 1"
+              (click)="emitPageChange(true)">
+        <nb-icon icon="arrow-back-outline"></nb-icon>
+      </button>
+      <button nbButton outline status="primary" size="large" [disabled]="currentPage >= 20" (click)="emitPageChange()">
+        <nb-icon icon="arrow-forward-outline"></nb-icon>
+      </button>
     </header>
     <ng-container *ngIf="characters.length > 0; else comicsContainer">
       <nb-card *ngFor="let character of characters" class="col-4" size="giant">

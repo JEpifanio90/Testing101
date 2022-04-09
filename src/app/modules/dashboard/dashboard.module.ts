@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { NbButtonGroupModule, NbCardModule, NbListModule, NbProgressBarModule, NbSpinnerModule } from "@nebular/theme";
+import { NbButtonModule, NbCardModule, NbIconModule, NbListModule, NbProgressBarModule, NbSpinnerModule } from "@nebular/theme";
 import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
 
@@ -20,8 +20,9 @@ import { DashboardView } from "@project/modules/dashboard/views/dashboard.view";
     CommonModule,
     DashboardRoutingModule,
     EffectsModule.forFeature([DashboardEffects]),
-    NbButtonGroupModule,
+    NbButtonModule,
     NbCardModule,
+    NbIconModule,
     NbListModule,
     NbSpinnerModule,
     NbProgressBarModule,

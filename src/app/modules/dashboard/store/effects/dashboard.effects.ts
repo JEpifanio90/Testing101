@@ -10,7 +10,7 @@ import { Character, Comic } from "@project/shared/models/common";
 export class DashboardEffects {
   fetchCharacters$ = createEffect(() => this.actions$.pipe(
     ofType(DashboardActions.fetchCharacters),
-    exhaustMap(() => this.dashboardService.getCharacters().pipe(
+    exhaustMap(action => this.dashboardService.getCharacters(action.page).pipe(
       map((characters: Array<Character>) => DashboardActions.fetchCharactersSuccess({ characters })),
       catchError(error => of(DashboardActions.fetchCharactersFailure({ error })))
     ))
@@ -18,7 +18,7 @@ export class DashboardEffects {
 
   fetchComics$ = createEffect(() => this.actions$.pipe(
     ofType(DashboardActions.fetchComics),
-    exhaustMap(() => this.dashboardService.getComics().pipe(
+    exhaustMap(action => this.dashboardService.getComics(action.page).pipe(
       map((comics: Array<Comic>) => DashboardActions.fetchComicsSuccess({ comics })),
       catchError(error => of(DashboardActions.fetchComicsFailure({ error })))
     ))

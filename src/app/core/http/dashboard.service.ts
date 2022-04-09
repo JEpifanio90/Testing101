@@ -7,19 +7,20 @@ import { Character, Comic } from "@project/shared/models/common";
 
 @Injectable()
 export class DashboardService {
+  private params: HttpParams = new HttpParams().append("apikey", environment.marvelKey);
   private baseUrl = "https://gateway.marvel.com/v1/public";
 
   constructor(private http: HttpClient) {
   }
 
-  getComics(): Observable<Array<Comic> | never> {
-    return this.http.get(`${ this.baseUrl }/comics`, { params: new HttpParams().append("apikey", environment.marvelKey) }).pipe(
+  getComics(offset: number): Observable<Array<Comic> | never> {
+    return this.http.get(`${ this.baseUrl }/comics`, { params: this.params.append("offset", (20 * offset) - 20) }).pipe(
       map((res: any) => res.data.results as Array<Comic>)
     );
   }
 
-  getCharacters(): Observable<Array<Character> | never> {
-    return this.http.get(`${ this.baseUrl }/characters`, { params: new HttpParams().append("apikey", environment.marvelKey) }).pipe(
+  getCharacters(offset: number): Observable<Array<Character> | never> {
+    return this.http.get(`${ this.baseUrl }/characters`, { params: this.params.append("offset", (20 * offset) - 20) }).pipe(
       map((res: any) => res.data.results as Array<Character>)
     );
   }
