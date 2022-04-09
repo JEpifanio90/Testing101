@@ -13,7 +13,7 @@ export interface State {
 }
 
 export const initialState: State = {
-  loading: false,
+  loading: true,
   characters: [],
   comics: []
 };

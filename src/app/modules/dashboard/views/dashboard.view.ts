@@ -9,8 +9,10 @@ import { Character, Comic } from "@project/shared/models/common";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardView {
+  @Input() loading!: boolean;
   @Input() comics!: Array<Comic>;
   @Input() characters!: Array<Character>;
+  currentPage = 1;
 
   constructor() {
   }

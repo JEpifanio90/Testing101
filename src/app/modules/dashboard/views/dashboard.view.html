@@ -1,43 +1,55 @@
-<div class="row">
-  <ng-container *ngIf="characters.length > 0; else comicsContainer">
-    <nb-card *ngFor="let character of characters" class="col-4" size="giant">
-      <nb-card-header>{{ character.name }}</nb-card-header>
-      <nb-card-body style="overflow: hidden">
-        <div style="text-align: center; max-height: 80%">
-          <img [src]="character.thumbnail.path + '.jpg'" [alt]="character.name + ' profile'"
-               style="max-width: 100%; max-height: 100%;"/>
-        </div>
-      </nb-card-body>
-      <nb-card-footer>{{ character?.description || 'No description found' }}</nb-card-footer>
-    </nb-card>
-  </ng-container>
-  <ng-template #comicsContainer>
-    <nb-flip-card *ngFor="let comic of comics" class="col-4" size="giant">
-      <nb-card-front>
-        <nb-card>
-          <nb-card-header>{{ comic.title }}</nb-card-header>
-          <nb-card-body style="overflow: hidden;">
-            <div style="text-align: center; max-height: 80%">
-              <img [src]="comic.thumbnail.path + '.jpg'" [alt]="comic.title + ' cover'"
-                   style="max-width: 100%; max-height: 100%;"/>
-            </div>
-          </nb-card-body>
-          <nb-card-footer>
-            <p>Page Count: {{ comic.pageCount }}</p>
-          </nb-card-footer>
-        </nb-card>
-      </nb-card-front>
-      <nb-card-back>
-        <nb-card>
-          <nb-card-header>Summary</nb-card-header>
-          <nb-card-body>
-            {{ comic?.description || "No description Found" }}
-          </nb-card-body>
-          <nb-card-footer>
-            <p>ISBN: {{ comic?.isbn || 'No ISBN found' }}</p>
-          </nb-card-footer>
-        </nb-card>
-      </nb-card-back>
-    </nb-flip-card>
-  </ng-template>
-</div>
+<ng-container *ngIf="loading; else view">
+  <nb-spinner size="giant" message="Grabbing some popcorn..."></nb-spinner>
+</ng-container>
+<ng-template #view>
+  <div class="row">
+    <header class="col-12 my-3" style="text-align: end">
+      <nb-button-group [disabled]="loading">
+        <button nbButtonToggle value="One">One</button>
+        <button nbButtonToggle value="Two">Two</button>
+        <button nbButtonToggle value="Three">Three</button>
+      </nb-button-group>
+    </header>
+    <ng-container *ngIf="characters.length > 0; else comicsContainer">
+      <nb-card *ngFor="let character of characters" class="col-4" size="giant">
+        <nb-card-header>{{ character.name }}</nb-card-header>
+        <nb-card-body style="overflow: hidden">
+          <div style="text-align: center; max-height: 80%">
+            <img [src]="character.thumbnail.path + '.jpg'" [alt]="character.name + ' profile'"
+                 style="max-width: 100%; max-height: 100%;"/>
+          </div>
+        </nb-card-body>
+        <nb-card-footer>{{ character?.description || 'No description found' }}</nb-card-footer>
+      </nb-card>
+    </ng-container>
+    <ng-template #comicsContainer>
+      <nb-flip-card *ngFor="let comic of comics" class="col-4" size="giant">
+        <nb-card-front>
+          <nb-card>
+            <nb-card-header>{{ comic.title }}</nb-card-header>
+            <nb-card-body style="overflow: hidden;">
+              <div style="text-align: center; max-height: 80%">
+                <img [src]="comic.thumbnail.path + '.jpg'" [alt]="comic.title + ' cover'"
+                     style="max-width: 100%; max-height: 100%;"/>
+              </div>
+            </nb-card-body>
+            <nb-card-footer>
+              <p>Page Count: {{ comic.pageCount }}</p>
+            </nb-card-footer>
+          </nb-card>
+        </nb-card-front>
+        <nb-card-back>
+          <nb-card>
+            <nb-card-header>Summary</nb-card-header>
+            <nb-card-body>
+              {{ comic?.description || "No description Found" }}
+            </nb-card-body>
+            <nb-card-footer>
+              <p>ISBN: {{ comic?.isbn || 'No ISBN found' }}</p>
+            </nb-card-footer>
+          </nb-card>
+        </nb-card-back>
+      </nb-flip-card>
+    </ng-template>
+  </div>
+</ng-template>
