@@ -1,3 +1,8 @@
 <ng-container *ngIf="(store$ | async) as store">
-  <ng-dashboard-view [comics]="store.state.comics" [characters]="store.state.characters"></ng-dashboard-view>
+  <ng-container *ngIf="store.state.loading; else view">
+    <nb-spinner size="giant" message="Grabbing some popcorn..."></nb-spinner>
+  </ng-container>
+  <ng-template #view>
+    <ng-dashboard-view [comics]="store.state.comics" [characters]="store.state.characters"></ng-dashboard-view>
+  </ng-template>
 </ng-container>

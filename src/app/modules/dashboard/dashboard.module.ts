@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { NbCardModule, NbProgressBarModule, NbSpinnerModule } from "@nebular/theme";
 import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
 
@@ -8,7 +9,6 @@ import { DashboardContainer } from "@project/modules/dashboard/containers/dashbo
 import { DashboardRoutingModule } from "@project/modules/dashboard/dashboard-routing.module";
 import { DashboardEffects, fromDashboard } from "@project/modules/dashboard/store";
 import { DashboardView } from "@project/modules/dashboard/views/dashboard.view";
-import { NbCardModule } from "@nebular/theme";
 
 
 @NgModule({
@@ -21,6 +21,8 @@ import { NbCardModule } from "@nebular/theme";
     DashboardRoutingModule,
     EffectsModule.forFeature([DashboardEffects]),
     NbCardModule,
+    NbSpinnerModule,
+    NbProgressBarModule,
     StoreModule.forFeature(fromDashboard.featureKey, fromDashboard.reducer)
   ],
   providers: [

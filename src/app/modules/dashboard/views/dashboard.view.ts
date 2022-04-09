@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+
 import { Character, Comic } from "@project/shared/models/common";
 
 @Component({
@@ -11,5 +12,6 @@ export class DashboardView {
   @Input() comics!: Array<Comic>;
   @Input() characters!: Array<Character>;
 
-  constructor() {}
+  constructor() {
+  }
 }

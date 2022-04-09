@@ -1,4 +1,5 @@
 import { createAction, props } from "@ngrx/store";
+
 import { Character, Comic } from "@project/shared/models/common";
 
 export const fetchCharacters = createAction(

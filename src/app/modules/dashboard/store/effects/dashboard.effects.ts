@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
+import { catchError, exhaustMap, map, of } from "rxjs";
+
 import { DashboardService } from "@project/core/http/dashboard.service";
 import { DashboardActions } from "@project/modules/dashboard/store";
-import { catchError, exhaustMap, map, of } from "rxjs";
 import { Character, Comic } from "@project/shared/models/common";
 
 @Injectable()
