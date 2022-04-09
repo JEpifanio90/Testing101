@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable, tap } from "rxjs";
 
-import { fromDashboard } from "@project/modules/dashboard/store";
+import { DashboardActions, fromDashboard } from "@project/modules/dashboard/store";
 import { selectDashboardWithQuery } from "@project/modules/dashboard/store/selectors/dashboard.selectors";
 
 @Component({
@@ -18,6 +18,7 @@ export class DashboardContainer {
     this.store$ = this.store.select(selectDashboardWithQuery).pipe(tap((st: { state: fromDashboard.State, query: string }) => {
       if (this.currentQuery !== st.query) {
         this.currentQuery = st.query;
+        this.store.dispatch((this.currentQuery === "characters") ? DashboardActions.fetchCharacters() : DashboardActions.fetchComics());
       }
     }));
   }

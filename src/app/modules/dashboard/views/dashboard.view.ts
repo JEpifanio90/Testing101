@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+import { Character, Comic } from "@project/shared/models/common";
 
 @Component({
   selector: "ng-dashboard-view",
@@ -7,7 +8,8 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardView {
+  @Input() comics!: Array<Comic>;
+  @Input() characters!: Array<Character>;
 
-  constructor() {
-  }
+  constructor() {}
 }

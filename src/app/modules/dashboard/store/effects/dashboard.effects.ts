@@ -1,8 +1,28 @@
 import { Injectable } from "@angular/core";
-import { Actions } from "@ngrx/effects";
+import { Actions, createEffect, ofType } from "@ngrx/effects";
+import { DashboardService } from "@project/core/http/dashboard.service";
+import { DashboardActions } from "@project/modules/dashboard/store";
+import { catchError, exhaustMap, map, of } from "rxjs";
+import { Character, Comic } from "@project/shared/models/common";
 
 @Injectable()
 export class DashboardEffects {
-  constructor(private actions$: Actions) {
+  fetchCharacters$ = createEffect(() => this.actions$.pipe(
+    ofType(DashboardActions.fetchCharacters),
+    exhaustMap(() => this.dashboardService.getCharacters().pipe(
+      map((characters: Array<Character>) => DashboardActions.fetchCharactersSuccess({ characters })),
+      catchError(error => of(DashboardActions.fetchCharactersFailure({ error })))
+    ))
+  ));
+
+  fetchComics$ = createEffect(() => this.actions$.pipe(
+    ofType(DashboardActions.fetchComics),
+    exhaustMap(() => this.dashboardService.getComics().pipe(
+      map((comics: Array<Comic>) => DashboardActions.fetchComicsSuccess({ comics })),
+      catchError(error => of(DashboardActions.fetchComicsFailure({ error })))
+    ))
+  ));
+
+  constructor(private actions$: Actions, private dashboardService: DashboardService) {
   }
 }

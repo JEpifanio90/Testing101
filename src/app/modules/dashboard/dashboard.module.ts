@@ -8,6 +8,7 @@ import { DashboardContainer } from "@project/modules/dashboard/containers/dashbo
 import { DashboardRoutingModule } from "@project/modules/dashboard/dashboard-routing.module";
 import { DashboardEffects, fromDashboard } from "@project/modules/dashboard/store";
 import { DashboardView } from "@project/modules/dashboard/views/dashboard.view";
+import { NbCardModule } from "@nebular/theme";
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { DashboardView } from "@project/modules/dashboard/views/dashboard.view";
     CommonModule,
     DashboardRoutingModule,
     EffectsModule.forFeature([DashboardEffects]),
+    NbCardModule,
     StoreModule.forFeature(fromDashboard.featureKey, fromDashboard.reducer)
   ],
   providers: [

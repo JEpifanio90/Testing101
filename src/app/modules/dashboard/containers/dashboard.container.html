@@ -1,3 +1,3 @@
-<ng-container>
-  <ng-dashboard-view></ng-dashboard-view>
+<ng-container *ngIf="(store$ | async) as store">
+  <ng-dashboard-view [comics]="store.state.comics" [characters]="store.state.characters"></ng-dashboard-view>
 </ng-container>

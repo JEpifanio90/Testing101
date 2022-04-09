@@ -1,4 +1,5 @@
 import { createAction, props } from "@ngrx/store";
+import { Character, Comic } from "@project/shared/models/common";
 
 export const fetchCharacters = createAction(
   "[Dashboard] Fetch Characters"
@@ -6,7 +7,7 @@ export const fetchCharacters = createAction(
 
 export const fetchCharactersSuccess = createAction(
   "[Dashboard] Fetch Characters Success",
-  props<{ characters: Array<string> }>()
+  props<{ characters: Array<Character> }>()
 );
 
 export const fetchCharactersFailure = createAction(
@@ -20,7 +21,7 @@ export const fetchComics = createAction(
 
 export const fetchComicsSuccess = createAction(
   "[Dashboard] Fetch Comics Success",
-  props<{ comics: Array<string> }>()
+  props<{ comics: Array<Comic> }>()
 );
 
 export const fetchComicsFailure = createAction(
