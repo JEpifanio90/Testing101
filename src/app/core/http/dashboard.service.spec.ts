@@ -1,10 +1,10 @@
 import { HttpClient } from "@angular/common/http";
 import { TestBed } from "@angular/core/testing";
 import { MockInstance, ngMocks } from "ng-mocks";
+import { of } from "rxjs";
 
 import { DashboardService } from "@project/core/http/dashboard.service";
 import { Character, Comic } from "@project/shared/models/common";
-import { of } from "rxjs";
 
 describe("Dashboard Service", () => {
   ngMocks.faster();

@@ -1,12 +1,13 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { DashboardContainer } from "@project/modules/dashboard/containers/dashboard.container";
-import { MockComponent } from "ng-mocks";
-import { DashboardView } from "@project/modules/dashboard/views/dashboard.view";
-import { MockStore, provideMockStore } from "@ngrx/store/testing";
-import { fromDashboard } from "@project/modules/dashboard/store";
-import { fromCore } from "@project/store/core.index";
 import { MemoizedSelector } from "@ngrx/store";
+import { MockStore, provideMockStore } from "@ngrx/store/testing";
+import { MockComponent } from "ng-mocks";
+
+import { DashboardContainer } from "@project/modules/dashboard/containers/dashboard.container";
+import { fromDashboard } from "@project/modules/dashboard/store";
 import { selectDashboardWithQuery } from "@project/modules/dashboard/store/selectors/dashboard.selectors";
+import { DashboardView } from "@project/modules/dashboard/views/dashboard.view";
+import { fromCore } from "@project/store/core.index";
 
 
 describe("Dashboard Container", () => {

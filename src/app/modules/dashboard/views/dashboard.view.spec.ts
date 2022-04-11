@@ -1,9 +1,9 @@
+import { SimpleChange } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-
-import { DashboardView } from "./dashboard.view";
 import { NbButtonModule, NbCardModule, NbIconModule, NbListModule, NbProgressBarModule, NbSpinnerModule } from "@nebular/theme";
 import { MockModule } from "ng-mocks";
-import { SimpleChange } from "@angular/core";
+
+import { DashboardView } from "./dashboard.view";
 
 describe("Dashboard View", () => {
   let component: DashboardView;

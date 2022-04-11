@@ -4,9 +4,9 @@ import { MockStore, provideMockStore } from "@ngrx/store/testing";
 import { MockComponent, MockInstance, ngMocks } from "ng-mocks";
 
 import { NavActionsContainer } from "@project/shared/components/nav-actions/containers/nav-actions.container";
-import { ETheme } from "@project/shared/enums/theme.enum";
-import { CoreActions, CoreSelectors, fromCore } from "@project/store/core.index";
 import { NavActionsView } from "@project/shared/components/nav-actions/views/nav-actions.view";
+import { ETheme } from "@project/shared/enums/theme.enum";
+import { CoreSelectors, fromCore } from "@project/store/core.index";
 
 
 describe("Nav Actions Container", () => {

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
-import { NbIconModule, NbLayoutModule } from "@nebular/theme";
+import { NbLayoutModule } from "@nebular/theme";
 import { MockInstance, MockModule, ngMocks } from "ng-mocks";
 
 import { AppComponent } from "./app.component";
