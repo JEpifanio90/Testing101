@@ -38,7 +38,8 @@ module.exports = function (config) {
           functions: 100,
           lines: 100
         }
-      }
+      },
+      exclude: []
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,

@@ -27,6 +27,12 @@ export class NavActionsView {
     this.changeTheme.emit((this.theme === ETheme.dark) ? ETheme.light : ETheme.dark);
   }
 
+  /**
+   * Emit Search
+   *
+   * @summary Emits an update query output event
+   * @returns void
+   */
   emitSearch(): void {
     this.updateQuery.emit(this.query);
   }

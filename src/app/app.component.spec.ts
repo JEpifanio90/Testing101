@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
-import { MockInstance, ngMocks } from "ng-mocks";
+import { NbLayoutModule } from "@nebular/theme";
+import { MockInstance, MockModule, ngMocks } from "ng-mocks";
 
 import { AppComponent } from "@project/app.component";
+import { NavActionsModule } from "@project/shared/components/nav-actions/nav-actions.module";
 
 describe("App Component", () => {
   ngMocks.faster();
@@ -13,11 +15,13 @@ describe("App Component", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
       declarations: [
         AppComponent
+      ],
+      imports: [
+        RouterTestingModule,
+        MockModule(NavActionsModule),
+        MockModule(NbLayoutModule)
       ]
     }).compileComponents();
 
