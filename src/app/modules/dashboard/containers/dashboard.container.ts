@@ -18,7 +18,7 @@ export class DashboardContainer {
     this.store$ = this.store.select(selectDashboardWithQuery).pipe(tap((st: { state: fromDashboard.State, query: string }) => {
       if (this.currentQuery !== st.query) {
         this.currentQuery = st.query;
-        this.store.dispatch((this.currentQuery === "characters") ? DashboardActions.fetchCharacters({ page: 1 }) : DashboardActions.fetchComics({ page: 1 }));
+        this.dispatchPageChange(1);
       }
     }));
   }

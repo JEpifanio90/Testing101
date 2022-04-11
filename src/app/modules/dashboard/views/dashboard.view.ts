@@ -19,8 +19,9 @@ export class DashboardView implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    // console.warn(changes["comics"]?.currentValue.length > 0 && changes["characters"]?.currentValue.legnth === 0, changes["comics"]?.currentValue);
     if (
-      (changes["comics"]?.currentValue.length > 0 && changes["characters"]?.currentValue.legnth === 0) ||
+      (changes["comics"]?.currentValue.length > 0 && changes["characters"]?.currentValue.length === 0) ||
       (changes["characters"]?.currentValue.length > 0 && changes["comics"]?.currentValue.legnth === 0)
     ) {
       this.currentPage = 1;
