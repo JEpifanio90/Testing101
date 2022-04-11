@@ -4,16 +4,17 @@ import { MockInstance, ngMocks } from "ng-mocks";
 
 import { DashboardService } from "@project/core/http/dashboard.service";
 import { Character, Comic } from "@project/shared/models/common";
+import { of } from "rxjs";
 
 describe("Dashboard Service", () => {
   ngMocks.faster();
   MockInstance.scope();
-  const spy = jasmine.createSpyObj("httpClient", ["get"])
+  const spy = { get: jest.fn() }
   let service: DashboardService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [{ provide: HttpClient, useValue: spy }]
+      providers: [DashboardService, { provide: HttpClient, useValue: spy }]
     });
     service = TestBed.inject(DashboardService);
   });
@@ -22,18 +23,18 @@ describe("Dashboard Service", () => {
     expect(service).toBeTruthy();
   });
 
-  it("should get the commics", done => {
-    spy.get.and.returnValue({ data: { results: [] } });
+  it("should get the comics", done => {
+    spy.get.mockReturnValue(of({ data: { results: [] } }));
     service.getComics(1).subscribe((comics: Array<Comic>) => {
-      expect(comics).toBe([]);
+      expect(comics).toStrictEqual([]);
       done();
     })
   });
 
   it("should get the characters", done => {
-    spy.get.and.returnValue({ data: { results: [] } });
+    spy.get.mockReturnValue(of({ data: { results: [] } }));
     service.getCharacters(1).subscribe((characters: Array<Character>) => {
-      expect(characters).toBe([]);
+      expect(characters).toStrictEqual([]);
       done();
     })
   });

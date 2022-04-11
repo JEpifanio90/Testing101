@@ -12,7 +12,7 @@ import { CoreEffects } from "@project/store/effects/core.effects";
 describe("Core Effects", () => {
   ngMocks.faster();
   MockInstance.scope();
-  let spy = jasmine.createSpyObj("ThemeService", ["changeTheme"])
+  let spy = { changeTheme: jest.fn() };
   let actions$: Observable<Action>;
   let effects: CoreEffects;
 
@@ -36,7 +36,6 @@ describe("Core Effects", () => {
   describe("Change Theme Effect", () => {
     it("should dispatch a success effect", done => {
       actions$ = of(CoreActions.changeTheme({ theme: ETheme.light }));
-      spy.changeTheme.and.callThrough();
 
       effects.themeManager$.subscribe(() => {
         expect(effects).toBeTruthy();

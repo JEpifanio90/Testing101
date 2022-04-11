@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { NbButtonModule, NbSelectModule } from "@nebular/theme";
+import { NbButtonModule, NbIconModule, NbSelectModule } from "@nebular/theme";
 import { MockInstance, MockModule, ngMocks } from "ng-mocks";
 
 import { NavActionsView } from "@project/shared/components/nav-actions/views/nav-actions.view";
@@ -14,7 +14,7 @@ describe("Nav Actions View", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [NavActionsView],
-      imports: [MockModule(NbSelectModule), MockModule(NbButtonModule)]
+      imports: [MockModule(NbSelectModule), MockModule(NbButtonModule), MockModule(NbIconModule)]
     }).compileComponents();
   });
 
@@ -28,12 +28,23 @@ describe("Nav Actions View", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should emit a change theme event", done => {
+  it("should emit a change theme event [Light]", done => {
     component.changeTheme.subscribe((theme: ETheme) => {
       expect(theme).toBeTruthy();
       done();
     });
 
+    component.theme = ETheme.dark;
+    component.emitChangeTheme();
+  });
+
+  it("should emit a change theme event [Dark]", done => {
+    component.changeTheme.subscribe((theme: ETheme) => {
+      expect(theme).toBeTruthy();
+      done();
+    });
+
+    component.theme = ETheme.light;
     component.emitChangeTheme();
   });
 
